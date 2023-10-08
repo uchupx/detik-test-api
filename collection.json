@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "bf42ae4a-1161-4312-9473-5cd3ec3331fc",
+		"name": "Detik Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6795322",
+		"_collection_link": "https://www.postman.com/winter-resonance-6097/workspace/kajian/collection/6795322-bf42ae4a-1161-4312-9473-5cd3ec3331fc?action=share&source=collection_link&creator=6795322"
+	},
+	"item": [
+		{
+			"name": "Find Transaction By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/transaction/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"transaction",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Transaction Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/transactions/status?merchant_id=10&references_id=34860495",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"transactions",
+						"status"
+					],
+					"query": [
+						{
+							"key": "merchant_id",
+							"value": "10"
+						},
+						{
+							"key": "references_id",
+							"value": "34860495"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Transaction All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/transactions",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"invoice_id\": 6,\n    \"item_name\": \"Item 1\",\n    \"amount\": 10.50,\n    \"payment_type\": \"credit_card\",\n    \"customer_name\": \"John Doe\",\n    \"merchant_id\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/transactions",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
